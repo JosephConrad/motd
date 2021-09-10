@@ -13,4 +13,4 @@ run-kube:
 invoke:
 	curl --cookie cookie.txt --cookie-jar cookie.txt -H 'Accept: application/json' http://127.0.0.1:8080/motd
 
-all: install build run
+all: build run
