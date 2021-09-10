@@ -15,7 +15,6 @@ def accepts(*content_types):
     def decorated(fn): 
         def wrapper(*args, **kwargs):
             requested = set(request.accept_mimetypes.values())
-            print(requested)
             defined = set(content_types)
             if len(requested & defined) == 0:
                 raise NotAcceptable()
