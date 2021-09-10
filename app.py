@@ -1,5 +1,5 @@
 from flask import render_template, Response, request, jsonify, Flask
-from werkzeug.exceptions import UnsupportedMediaType, NotAcceptable
+from werkzeug.exceptions import NotAcceptable
 from datetime import datetime
 from quotes import quotes
 import random
