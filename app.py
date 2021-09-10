@@ -15,6 +15,7 @@ def accepts(*content_types):
     def decorated(fn): 
         def wrapper(*args, **kwargs):
             requested = set(request.accept_mimetypes.values())
+            print(requested)
             defined = set(content_types)
             if len(requested & defined) == 0:
                 raise NotAcceptable()
@@ -33,8 +34,8 @@ def _is_motd_expired(request, time):
     return time != time_cookie
 
 
-@accepts(*ACCEPT_ALLOWED)
 @app.route('/motd')
+@accepts(*ACCEPT_ALLOWED)
 def motd():  
     content_type = request.accept_mimetypes.best_match(ACCEPT_ALLOWED) 
 
